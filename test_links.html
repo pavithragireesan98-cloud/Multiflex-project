@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Accept/Reject Links</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        a { color: blue; margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <h1>Test Links</h1>
+    
+    <div class="test">
+        <strong>Test Accept Link for req_id=1:</strong>
+        <a href="/user_accept_payment/1">Test Accept</a>
+    </div>
+    
+    <div class="test">
+        <strong>Test Reject Link for req_id=1:</strong>
+        <a href="/user_reject_assigned/1">Test Reject</a>
+    </div>
+    
+    <div class="test">
+        <strong>Test Payment Page:</strong>
+        <a href="/pay?req_id=1&amount=200">Test Payment</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Payments | MULTIFLEX</title>
+    <style>
+        body { font-family: Arial; background:#f1f6f4; }
+        table { width: 95%; margin: auto; border-collapse: collapse; background:white; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align:center; }
+        th { background:#009879; color:white; }
+    </style>
+</head>
+<body>
+
+{% include 'admin_header.html' %}
+
+<h2 style="text-align:center; color:#009879;">Payment History</h2>
+
+<table>
+    <tr>
+        <th>Sl No</th>
+        <th>User</th>
+        <th>Worker</th>
+        <th>Skill</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Date-Time</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row.user_fname }} {{ row.user_lname }}</td>
+        <td>{{ row.worker_fname }} {{ row.worker_lname }}</td>
+        <td>{{ row.skill_name }}</td>
+        <td>₹{{ row.amount }}</td>
+
+        {% if row.status == 'paid' %}
+        <td style="color:green;">✔ Paid</td>
+        {% else %}
+        <td style="color:red;">❌ Not Paid</td>
+        {% endif %}
+
+        <td>{{ row.Date_time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
